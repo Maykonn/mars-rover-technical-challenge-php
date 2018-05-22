@@ -33,5 +33,7 @@ class Move implements Command
                 $Rover->setSetup(new RoverSetup($newInputSetup));
                 break;
         }
+
+        return;
     }
 }

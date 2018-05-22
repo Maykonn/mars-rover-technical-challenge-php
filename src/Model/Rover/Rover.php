@@ -21,28 +21,33 @@ class Rover
      */
     private $Commands;
 
-    public function setCommands(CommandsCollection $Commands)
+    public function setCommands(CommandsCollection $Commands): void
     {
         $this->Commands = $Commands;
+        return;
     }
 
-    public function setSetup(RoverSetup $RoverSetup)
+    public function setSetup(RoverSetup $RoverSetup): void
     {
         $this->Setup = $RoverSetup;
+        return;
     }
 
-    public function execute()
+    public function execute(): void
     {
         $Iterator = $this->Commands->getIterator();
         $Iterator->rewind();
+
         while ($Iterator->valid()) {
             $Command = $Iterator->current();
             $Command->execute($this);
             $Iterator->next();
         }
+
+        return;
     }
 
-    public function getSetupAsString()
+    public function getSetupAsString(): string
     {
         return $this->Setup->toString();
     }

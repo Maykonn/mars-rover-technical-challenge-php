@@ -2,6 +2,7 @@
 
 namespace MarsRover\Service;
 
+use MarsRover\Model\Command\Command;
 use MarsRover\Model\Command\CommandTypes;
 use MarsRover\Model\Command\Move;
 use MarsRover\Model\Command\TurnLeft;
@@ -9,7 +10,7 @@ use MarsRover\Model\Command\TurnRight;
 
 class CommandFactory
 {
-    public function createCommand(string $commandType)
+    public function createCommand(string $commandType): Command
     {
         switch ($commandType) {
             case CommandTypes::MOVE:

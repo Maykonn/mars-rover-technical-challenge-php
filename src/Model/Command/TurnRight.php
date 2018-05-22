@@ -17,6 +17,8 @@ class TurnRight extends Rotatable implements Command
 
         $newInputSetup = $currentXPosition . " " . $currentYPosition . " " . $this->rotateFrom($currentOrientation);
         $Rover->setSetup(new RoverSetup($newInputSetup));
+
+        return;
     }
 
     protected function rotateFrom($currentDirection): string

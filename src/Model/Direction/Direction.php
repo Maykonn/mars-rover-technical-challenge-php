@@ -26,7 +26,7 @@ class Direction
         throw new \Exception("Invalid Orientation, given: " . $orientation);
     }
 
-    private function isValid($orientation)
+    private function isValid($orientation): bool
     {
         return in_array(
             $orientation,

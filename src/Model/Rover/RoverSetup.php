@@ -28,7 +28,7 @@ class RoverSetup
         $this->Direction = new Direction($currentSetup[2]);
     }
 
-    public function toString()
+    public function toString(): string
     {
         return $this->Coordinate->getX() . " " . $this->Coordinate->getY() . " " . $this->Direction->getOrientation();
     }
