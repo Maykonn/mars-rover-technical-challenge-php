@@ -1,7 +1,10 @@
 # Mars Rovers Squad
 
-## How to Use:
+## How to execute the program:
 `php index.php < stdin.txt`
+
+## How to execute the program test suite:
+`make test`
 
 ## Overview
 Purpose of this challenge is to enable you to demonstrate your proficiency in solving problems
