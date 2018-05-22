@@ -1,5 +1,8 @@
 # Mars Rovers Squad
 
+## Execute:
+`php index.php < stdin.txt`
+
 ## Overview
 Purpose of this challenge is to enable you to demonstrate your proficiency in solving problems
 using software engineering tools and processes. Read the specification below and produce a
