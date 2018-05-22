@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MarsRover\Test;
-
-require_once __DIR__ . '/../vendor/autoload.php';
+namespace MarsRover\Test\Model\Rover;
 
 use MarsRover\Model\Rover\Rover;
 use MarsRover\Model\Rover\RoverSetup;

@@ -7,10 +7,16 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         verbose="true">
+         verbose="true"
+         bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="MarsRover">
-            <directory>./test</directory>
+            <file>./test/Model/Coordinate/CoordinateTest.php</file>
+            <file>./test/Model/Plateau/PlateauTest.php</file>
+            <file>./test/Model/Direction/DirectionTest.php</file>
+            <file>./test/Model/Rover/RoverSetupTest.php</file>
+            <file>./test/Model/Rover/RoverTest.php</file>
+            <file>./test/Model/Rover/RoverSquadTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
