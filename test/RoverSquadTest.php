@@ -30,7 +30,7 @@ class RoverSquadTest extends TestCase
     public function testIsPossibleToAddRoverOne()
     {
         $this->RoverSquad->offsetSet(0, $this->RoverOne);
-        $this->assertEquals(true, ($this->RoverSquad->offsetGet(0) instanceof Rover));
+        $this->assertTrue($this->RoverSquad->offsetGet(0) instanceof Rover);
     }
 
     /**
@@ -51,7 +51,7 @@ class RoverSquadTest extends TestCase
     public function testIsPossibleToAddRoverTwo()
     {
         $this->RoverSquad->offsetSet(1, $this->RoverTwo);
-        $this->assertEquals(true, ($this->RoverSquad->offsetGet(1) instanceof Rover));
+        $this->assertTrue($this->RoverSquad->offsetGet(1) instanceof Rover);
     }
 
     /**
