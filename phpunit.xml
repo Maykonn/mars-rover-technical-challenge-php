@@ -11,13 +11,14 @@
          bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="MarsRover">
+            <file>./test/Service/CommandFactoryTest.php</file>
+            <file>./test/Service/CommandsInputParserTest.php</file>
             <file>./test/Model/Coordinate/CoordinateTest.php</file>
             <file>./test/Model/Plateau/PlateauTest.php</file>
             <file>./test/Model/Direction/DirectionTest.php</file>
             <file>./test/Model/Rover/RoverSetupTest.php</file>
             <file>./test/Model/Rover/RoverTest.php</file>
             <file>./test/Model/Rover/RoverSquadTest.php</file>
-            <file>./test/Service/CommandFactoryTest.php</file>
             <file>./test/Model/Command/CommandCollectionTest.php</file>
             <file>./test/Model/Command/MoveTest.php</file>
             <file>./test/Model/Command/TurnLeftTest.php</file>
