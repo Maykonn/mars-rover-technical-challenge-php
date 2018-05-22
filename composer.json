@@ -1,0 +1,19 @@
+{
+    "name": "maykonn/mars-rovers-squad",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Maykonn",
+            "email": "maykonn@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MarsRover\\": "src/",
+            "MarsRover\\Test\\": "test/"
+        }
+    },
+    "require": {
+      "php": ">= 5.3"
+    }
+}
