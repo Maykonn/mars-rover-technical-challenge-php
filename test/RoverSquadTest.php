@@ -36,7 +36,7 @@ class RoverSquadTest extends TestCase
     /**
      * @depends testIsPossibleToAddRoverOne
      */
-    public function testSquadRoverOutputWhenJustRoverOneIsOnSquad()
+    public function testSquadRoverOutputIsCorrectWhenJustRoverOneIsOnSquad()
     {
         $this->RoverSquad->offsetSet(0, $this->RoverOne);
         $this->RoverSquad->execute();
@@ -46,7 +46,7 @@ class RoverSquadTest extends TestCase
     }
 
     /**
-     * @depends testSquadRoverOutputWhenJustRoverOneIsOnSquad
+     * @depends testSquadRoverOutputIsCorrectWhenJustRoverOneIsOnSquad
      */
     public function testIsPossibleToAddRoverTwo()
     {
@@ -57,7 +57,7 @@ class RoverSquadTest extends TestCase
     /**
      * @depends testIsPossibleToAddRoverTwo
      */
-    public function testSquadRoverOutputWhenRoverOneAndRoverTwoIsOnSquad()
+    public function testSquadRoverOutputIsCorrectWhenRoverOneAndRoverTwoIsOnSquad()
     {
         $this->RoverSquad->offsetSet(0, $this->RoverOne);
         $this->RoverSquad->offsetSet(1, $this->RoverTwo);
