@@ -18,17 +18,18 @@ class RoverSquad extends \ArrayObject
         return;
     }
 
-    public function getRoversSetupAsString(): void
+    public function getRoversSetupAsString(): string
     {
         $Iterator = $this->getIterator();
         $Iterator->rewind();
 
+        $setup = [];
         while ($Iterator->valid()) {
             $Rover = $Iterator->current();
-            echo $Rover->getSetupAsString() . "\n";
+            $setup[] = $Rover->getSetupAsString();
             $Iterator->next();
         }
 
-        return;
+        return implode("\n", $setup);
     }
 }

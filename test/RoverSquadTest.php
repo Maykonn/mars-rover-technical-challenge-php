@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace MarsRover\Test;
 
@@ -17,28 +17,53 @@ class RoverSquadTest extends TestCase
     public function setUp()
     {
         $this->RoverSquad = new RoverSquad();
+
+        $this->RoverOne = new Rover();
+        $this->RoverOne->setSetup(new RoverSetup("1 2 N"));
+        $this->RoverOne->setCommands((new CommandsInputParser("LMLMLMLMM"))->getCommandsCollection());
+
+        $this->RoverTwo = new Rover();
+        $this->RoverTwo->setSetup(new RoverSetup("3 3 E"));
+        $this->RoverTwo->setCommands((new CommandsInputParser("MMRMMRMRRM"))->getCommandsCollection());
     }
 
-    public function testIsPossibleToAddRover()
+    public function testIsPossibleToAddRoverOne()
     {
-        $this->RoverOneToSquad = new Rover();
-        $this->RoverOneToSquad->setSetup(new RoverSetup("1 2 N"));
-        $this->RoverOneToSquad->setCommands((new CommandsInputParser("LMLMLMLMM"))->getCommandsCollection());
-        $this->RoverSquad->offsetSet(0, $this->RoverOneToSquad);
+        $this->RoverSquad->offsetSet(0, $this->RoverOne);
         $this->assertEquals(true, ($this->RoverSquad->offsetGet(0) instanceof Rover));
     }
 
     /**
-     * @depends testIsPossibleToAddRover
+     * @depends testIsPossibleToAddRoverOne
      */
-    public function testSquadOutputIsCorrect()
+    public function testSquadRoverOutputWhenJustRoverOneIsOnSquad()
     {
-        $this->RoverOneToSquad = new Rover();
-        $this->RoverOneToSquad->setSetup(new RoverSetup("1 2 N"));
-        $this->RoverOneToSquad->setCommands((new CommandsInputParser("LMLMLMLMM"))->getCommandsCollection());
-        $this->RoverSquad->offsetSet(0, $this->RoverOneToSquad);
-
+        $this->RoverSquad->offsetSet(0, $this->RoverOne);
         $this->RoverSquad->execute();
-        $this->assertEquals("1 3 N", $this->RoverSquad->getRoversSetupAsString());
+
+        $this->expectOutputString("1 3 N");
+        echo $this->RoverSquad->getRoversSetupAsString();
+    }
+
+    /**
+     * @depends testSquadRoverOutputWhenJustRoverOneIsOnSquad
+     */
+    public function testIsPossibleToAddRoverTwo()
+    {
+        $this->RoverSquad->offsetSet(1, $this->RoverTwo);
+        $this->assertEquals(true, ($this->RoverSquad->offsetGet(1) instanceof Rover));
+    }
+
+    /**
+     * @depends testIsPossibleToAddRoverTwo
+     */
+    public function testSquadRoverOutputWhenRoverOneAndRoverTwoIsOnSquad()
+    {
+        $this->RoverSquad->offsetSet(0, $this->RoverOne);
+        $this->RoverSquad->offsetSet(1, $this->RoverTwo);
+        $this->RoverSquad->execute();
+
+        $this->expectOutputString("1 3 N\n5 1 E");
+        echo $this->RoverSquad->getRoversSetupAsString();
     }
 }
