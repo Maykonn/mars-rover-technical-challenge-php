@@ -1,6 +1,6 @@
 # Mars Rovers Squad
 
-## Execute:
+## How to Use:
 `php index.php < stdin.txt`
 
 ## Overview
