@@ -1,4 +1,4 @@
-.PHONY: install update test
+.PHONY: install update test clean-coverage
 
 install:
 	composer install
@@ -9,5 +9,8 @@ update:
 	composer dumpautoload
 	make test
 
-test:
+test: clean-coverage
 	./vendor/bin/phpunit --testdox
+
+clean-coverage:
+	rm -rf ./test/_reports

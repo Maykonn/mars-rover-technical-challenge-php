@@ -21,6 +21,9 @@ class TurnRight extends Rotatable implements Command
         return;
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     protected function rotateFrom($currentDirection): string
     {
         switch ($currentDirection) {
