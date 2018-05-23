@@ -3,8 +3,20 @@
 ## How to execute the program:
 `php index.php < stdin.txt`
 
+The output is the new position on Plateau for each Rover on Squad.
+
 ## How to execute the program test suite:
 `make test`
+
+The output is the test results.  
+You can see the tests results as html in /test/_reports after run the `make test` command.  
+Please, install XDebug to get awesome code coverage html report in the same directory:
+
+`sudo apt-get install php7.2-xdebug`
+
+`make test`
+
+And access mars-rovers-squad/test/_reports/coverage/ using your browser.
 
 ## Overview
 Purpose of this challenge is to enable you to demonstrate your proficiency in solving problems
